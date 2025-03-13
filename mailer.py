@@ -6,7 +6,7 @@ from smtplib import SMTP
 
 
 
-def send_mail(data: dict | None = None):
+def send_mail(data: dict ):
     msg = MailBody(**data)
     message = MIMEText(msg.body, "html")
     message["From"] = USERNAME

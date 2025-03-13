@@ -1,10 +1,7 @@
-import uvicorn
+
 from fastapi import FastAPI, BackgroundTasks
-import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
-from app.mailer import send_mail
-from app.config import MailBody
+from mailer import send_mail
+from config import MailBody
 
 app = FastAPI()
 
@@ -25,5 +22,3 @@ def schedule_mail(req: MailBody, tasks: BackgroundTasks):
 
 
 
-if __name__ == "__main__":
-    uvicorn.run("main:app", port = 8000 )
